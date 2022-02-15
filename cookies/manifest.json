@@ -1,0 +1,35 @@
+{
+	"manifest_version": 2,
+	"name": "浏览器cookie同步到服务器的插件",
+	"version": "1.0.0",
+	"description": "浏览器cookie同步到服务器的插件",
+	"icons": {
+        "16": "images/icon.png",
+        "48": "images/icon.png",
+        "128": "images/icon.png"
+    },
+	"permissions": [
+		"cookies",
+		"contextMenus",
+		"tabs",
+		"notifications",
+		"webRequest",
+		"webRequestBlocking",
+		"storage",
+		"https://mp.weixin.qq.com/*",
+		"https://media.ctft.net/wx/*"
+    ],
+	"content_scripts": [
+	    {
+	     "matches": ["https://mp.weixin.qq.com/cgi-bin/home?*","https://mp.weixin.qq.com/cgi-bin/appmsg?*"],
+	      "js": ["jquery.js","main.js"],
+	      "css": ["main.css"]
+	    }
+	],
+	"background": {
+        "scripts": [
+			"jquery.js",
+            "background.js"
+        ]
+    }
+}
