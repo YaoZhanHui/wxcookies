@@ -34,7 +34,7 @@ chrome.runtime.onMessage.addListener(function(objRequest, _, sendResponse){
         // laserExtensionId 1 get请求是否受过权 2 post 授权
         if (objRequest.laserExtensionId === 1) {
             $.ajax({
-                url: 'https://media.ctft.net/wx/checkcookie',
+                url: '/wx/checkcookie',
                 type: 'GET',
                 data: {'user_name': user_name,'token': token},
                 dataType: 'text',
@@ -47,7 +47,7 @@ chrome.runtime.onMessage.addListener(function(objRequest, _, sendResponse){
             });
         } else {
             $.ajax({
-                url: 'https://media.ctft.net/wx/setcookie',
+                url: '/wx/setcookie',
                 type: 'POST',
                 data: {'user_name': user_name,'token': token,'cookie':cookieslist},
                 dataType: 'text',
